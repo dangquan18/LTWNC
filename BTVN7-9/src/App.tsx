@@ -1,6 +1,9 @@
 import { Accordion } from "./components/Accordion";
 import { ProductPagination } from "./components/ProductPagination";
 import { products } from "./data/products";
+import { Cart } from "./features/cart/Cart";
+import { ProductList } from "./features/products/ProductList";
+import { ProductListRTKQuery } from "./features/products/ProductListRTKQuery";
 import "./style.css";
 
 export default function App() {
@@ -42,6 +45,19 @@ export default function App() {
       <section>
         <h2>2. Custom hook: usePagination&lt;Product&gt;</h2>
         <ProductPagination products={products} itemsPerPage={5} />
+      </section>
+
+      <section>
+        <h2>3. Redux Toolkit: Module giỏ hàng</h2>
+
+        <h3>Sản phẩm (productsSlice + createAsyncThunk)</h3>
+        <ProductList />
+
+        <h3>Sản phẩm (bonus: RTK Query)</h3>
+        <ProductListRTKQuery />
+
+        <h3>Giỏ hàng (cartSlice)</h3>
+        <Cart />
       </section>
     </main>
   );
